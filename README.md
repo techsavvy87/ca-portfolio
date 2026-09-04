@@ -13,7 +13,6 @@ The site highlights my experience, projects, technical skills, resume, and conta
 - Vite
 - styled-components
 - tsParticles
-- Nodemailer and Vercel Functions
 - Vercel Analytics
 
 ## Getting Started
@@ -44,21 +43,9 @@ npm run preview
 
 ## Contact Form
 
-The contact form posts to the Vercel serverless endpoint at `/api/contact`.
-Set the following environment variables in Vercel before deploying:
-
-```text
-MAIL_HOST
-MAIL_PORT
-MAIL_SCHEME
-MAIL_USERNAME
-MAIL_PASSWORD
-MAIL_FROM_ADDRESS
-MAIL_FROM_NAME
-CONTACT_EMAIL
-```
-
-Use `.env.example` as the local configuration template. Keep `.env.local` private; do not expose SMTP credentials through `VITE_` variables.
+The contact form is a front-end demo. It validates the email and message, shows a
+realistic submitting state, and displays confirmation without transmitting or
+storing the entered data.
 
 ## Resume
 

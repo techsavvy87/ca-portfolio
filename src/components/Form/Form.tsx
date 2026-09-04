@@ -8,6 +8,7 @@ export function Form() {
   const [message, setMessage] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [hasSucceeded, setHasSucceeded] = useState(false)
+  const validMessage = message.trim().length > 0
 
   function verifyEmail(email: string) {
     if (validator.isEmail(email)) {
@@ -19,42 +20,20 @@ export function Form() {
 
   async function submitForm(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    const formData = new FormData(event.currentTarget)
-
     setIsSubmitting(true)
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email: formData.get('email'),
-          message: formData.get('message'),
-        }),
-      })
 
-      if (!response.ok) {
-        throw new Error('Unable to send email')
-      }
+    // Simulate the delay of a real request without transmitting or storing data.
+    await new Promise((resolve) => window.setTimeout(resolve, 900))
 
-      setHasSucceeded(true)
-      toast.success('Email successfully sent!', {
-        position: 'bottom-left',
-        pauseOnFocusLoss: false,
-        closeOnClick: true,
-        hideProgressBar: false,
-        toastId: 'succeeded',
-      })
-    } catch {
-      toast.error('Unable to send your message. Please try again later.', {
-        position: 'bottom-left',
-        pauseOnFocusLoss: false,
-        closeOnClick: true,
-        hideProgressBar: false,
-        toastId: 'failed',
-      })
-    } finally {
-      setIsSubmitting(false)
-    }
+    setIsSubmitting(false)
+    setHasSucceeded(true)
+    toast.success('Message successfully submitted!', {
+      position: 'bottom-left',
+      pauseOnFocusLoss: false,
+      closeOnClick: true,
+      hideProgressBar: false,
+      toastId: 'succeeded',
+    })
   }
 
   if (hasSucceeded) {
@@ -81,6 +60,8 @@ export function Form() {
           id="email"
           type="email"
           name="email"
+          maxLength={254}
+          autoComplete="email"
           onChange={(e) => {
             verifyEmail(e.target.value)
           }}
@@ -94,10 +75,11 @@ export function Form() {
           onChange={(e) => {
             setMessage(e.target.value)
           }}
+          maxLength={5000}
         />
         <button
           type="submit"
-          disabled={isSubmitting || !validEmail || !message}
+          disabled={isSubmitting || !validEmail || !validMessage}
         >
           {isSubmitting ? 'Sending...' : 'Submit'}
         </button>

@@ -12,7 +12,6 @@
     "@tsparticles/slim": "^4.3.2",
     "@vercel/analytics": "^2.0.1",
     "@vitejs/plugin-react": "^6.0.3",
-    "nodemailer": "^10.0.0",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "react-router-dom": "^7.18.1",
@@ -25,10 +24,10 @@
     "web-vitals": "^5.3.0"
   },
   "scripts": {
-    "start": "vite --host 127.0.0.1",
-    "dev": "vite --host 127.0.0.1",
+    "start": "node init && vite --host 127.0.0.1",
+    "dev": "node init && vite --host 127.0.0.1",
     "lint": "eslint .",
-    "build": "tsc -b && vite build",
+    "build": "node init && tsc -b && vite build",
     "preview": "vite preview --host 127.0.0.1"
   },
   "browserslist": {
