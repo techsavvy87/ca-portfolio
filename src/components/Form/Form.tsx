@@ -1,15 +1,14 @@
 import { Container, ContainerSucces } from './styles'
-import { useForm, ValidationError } from '@formspree/react'
 import { toast, ToastContainer } from 'react-toastify'
-import ReCAPTCHA from 'react-google-recaptcha'
-import { useEffect, useState } from 'react'
+import { FormEvent, useState } from 'react'
 import validator from 'validator'
 
 export function Form() {
-  const [state, handleSubmit] = useForm('xknkpqry')
   const [validEmail, setValidEmail] = useState(false)
-  const [isHuman, setIsHuman] = useState(false)
   const [message, setMessage] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [hasSucceeded, setHasSucceeded] = useState(false)
+
   function verifyEmail(email: string) {
     if (validator.isEmail(email)) {
       setValidEmail(true)
@@ -17,8 +16,27 @@ export function Form() {
       setValidEmail(false)
     }
   }
-  useEffect(() => {
-    if (state.succeeded) {
+
+  async function submitForm(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    const formData = new FormData(event.currentTarget)
+
+    setIsSubmitting(true)
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: formData.get('email'),
+          message: formData.get('message'),
+        }),
+      })
+
+      if (!response.ok) {
+        throw new Error('Unable to send email')
+      }
+
+      setHasSucceeded(true)
       toast.success('Email successfully sent!', {
         position: 'bottom-left',
         pauseOnFocusLoss: false,
@@ -26,9 +44,20 @@ export function Form() {
         hideProgressBar: false,
         toastId: 'succeeded',
       })
+    } catch {
+      toast.error('Unable to send your message. Please try again later.', {
+        position: 'bottom-left',
+        pauseOnFocusLoss: false,
+        closeOnClick: true,
+        hideProgressBar: false,
+        toastId: 'failed',
+      })
+    } finally {
+      setIsSubmitting(false)
     }
-  })
-  if (state.succeeded) {
+  }
+
+  if (hasSucceeded) {
     return (
       <ContainerSucces>
         <h3>Thanks for getting in touch!</h3>
@@ -46,7 +75,7 @@ export function Form() {
   return (
     <Container>
       <h2>Get in touch using the form</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={submitForm}>
         <input
           placeholder="Email"
           id="email"
@@ -57,7 +86,6 @@ export function Form() {
           }}
           required
         />
-        <ValidationError prefix="Email" field="email" errors={state.errors} />
         <textarea
           required
           placeholder="Send a message to get started."
@@ -67,22 +95,11 @@ export function Form() {
             setMessage(e.target.value)
           }}
         />
-        <ValidationError
-          prefix="Message"
-          field="message"
-          errors={state.errors}
-        />
-        <ReCAPTCHA
-          sitekey="6Lfj9NYfAAAAAP8wPLtzrsSZeACIcGgwuEIRvbSg"
-          onChange={(e) => {
-            setIsHuman(true)
-          }}
-        ></ReCAPTCHA>
         <button
           type="submit"
-          disabled={state.submitting || !validEmail || !message || !isHuman}
+          disabled={isSubmitting || !validEmail || !message}
         >
-          Submit
+          {isSubmitting ? 'Sending...' : 'Submit'}
         </button>
       </form>
       <ToastContainer />
