@@ -24,10 +24,10 @@
     "web-vitals": "^5.3.0"
   },
   "scripts": {
-    "start": "node init && vite --host 127.0.0.1",
-    "dev": "node init && vite --host 127.0.0.1",
+    "start": "vite --host 127.0.0.1",
+    "dev": "vite --host 127.0.0.1",
     "lint": "eslint .",
-    "build": "node init && tsc -b && vite build",
+    "build": "tsc -b && vite build",
     "preview": "vite preview --host 127.0.0.1"
   },
   "browserslist": {
