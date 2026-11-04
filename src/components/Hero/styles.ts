@@ -7,8 +7,8 @@ export const Container = styled.section`
   gap: 8rem;
   background: rgba(0,0,0,0);
   .hero-text{
-    & > p{
-      font-size: 1.8rem;
+    p.greeting{
+      font-size: 3rem;
     }
     h1{
       font-size: 7rem;
@@ -24,21 +24,6 @@ export const Container = styled.section`
       margin-bottom: 5rem;
     }
   }
-// New added
-  .social-media{
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    padding-top:5rem;
-    padding-left:1rem;
-
-    img,span{
-      font-size: 3rem;
-      width: 3.5rem;
-    }
-  }
-
 
   .button{
     margin-top: 5rem;
@@ -56,6 +41,9 @@ export const Container = styled.section`
     display: block;
     margin-top: 15%;
     .hero-text{
+      p.greeting{
+        font-size: 2.4rem;
+      }
 
       h1{
         font-size: 5rem;

@@ -24,18 +24,6 @@ export const Container = styled.footer`
       animation: spinning 5s infinite linear;
     }
   }
-  .social-media{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-
-    img,span{
-      font-size: 3rem;
-      width: 3rem;
-    }
-  }
-
 
   @keyframes spinning {
     0%{
