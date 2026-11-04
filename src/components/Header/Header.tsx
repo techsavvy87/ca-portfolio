@@ -36,9 +36,6 @@ export function Header() {
           <NavHashLink smooth to="#project" onClick={closeMenu}>
             Project
           </NavHashLink>
-          <NavHashLink smooth to="#contact" onClick={closeMenu}>
-            Contact
-          </NavHashLink>
           <a href="/Catherine_Regato_FullStack_Developer.pdf" download className="button">
             Resume
           </a>

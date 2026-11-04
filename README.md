@@ -4,7 +4,7 @@
 
 Personal portfolio website for Catherine Ambrad, Full Stack AI Engineer.
 
-The site highlights my experience, projects, technical skills, resume, and contact details. It is built with React, TypeScript, Vite, and styled-components.
+The site highlights my experience, projects, technical skills, and resume. It is built with React, TypeScript, Vite, and styled-components.
 
 ## Tech Stack
 
@@ -40,12 +40,6 @@ Preview the production build:
 ```bash
 npm run preview
 ```
-
-## Contact Form
-
-The contact form is a front-end demo. It validates the email and message, shows a
-realistic submitting state, and displays confirmation without transmitting or
-storing the entered data.
 
 ## Resume
 
