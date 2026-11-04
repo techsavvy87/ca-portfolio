@@ -21,7 +21,7 @@ export function Footer() {
       </div>
       <div className="social-media">
         <a
-          href="https://www.linkedin.com/in/codevinayak"
+          href="https://www.linkedin.com/in/catherine-ambrad-3b5799445/"
           target="_blank"
           rel="noreferrer"
         >
@@ -35,7 +35,7 @@ export function Footer() {
           <img src={githubIcon} alt="GitHub" />
         </a>
         <a
-          href="https://api.whatsapp.com/send/?phone=%2B639185546139&text=Hello+Catherine+I+found+your+contact+through+portfolio+site.%0A%0A"
+          href="https://api.whatsapp.com/send/?phone=%2B639076849221&text=Hello+Catherine+I+found+your+contact+through+portfolio+site.%0A%0A"
           target="_blank"
           rel="noreferrer"
         >

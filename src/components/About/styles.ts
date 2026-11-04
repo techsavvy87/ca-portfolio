@@ -7,6 +7,17 @@ export const Container = styled.section`
   gap: 4rem;
   align-items: center;
 
+  .experience ul{
+    margin-top: 0.8rem;
+    padding-left: 2rem;
+    text-align: left;
+
+    li{
+      list-style: disc;
+      margin-bottom: 0.4rem;
+    }
+  }
+
   .hard-skills{
     margin-top: 1.6rem;
     display: flex;

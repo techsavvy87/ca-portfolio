@@ -15,7 +15,7 @@ export function Hero() {
           <p>Hello, I'm</p>
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInUp" delay={0.2 * 1000}>
-          <h1>Catherine Regato</h1>
+          <h1>Catherine Ambrad</h1>
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInUp" delay={0.4 * 1000}>
           <h3>Full Stack Web and Mobile Developer</h3>
@@ -30,7 +30,7 @@ export function Hero() {
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInUp" delay={1 * 1000}>
       <div className="social-media"><a
-        href="https://www.linkedin.com/in/catherine-regato-594a5842b/"
+        href="https://www.linkedin.com/in/catherine-ambrad-3b5799445/"
         target="_blank"
         rel="noreferrer"
       >
@@ -44,7 +44,7 @@ export function Hero() {
           <img src={githubIcon} alt="GitHub" />
         </a>
         <a
-          href="https://api.whatsapp.com/send/?phone=%2B639185546139&text=Hello+Catherine+I+found+your+contact+through+portfolio+site.%0A%0A"
+          href="https://api.whatsapp.com/send/?phone=%2B639076849221&text=Hello+Catherine+I+found+your+contact+through+portfolio+site.%0A%0A"
           target="_blank"
           rel="noreferrer"
         >

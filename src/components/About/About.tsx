@@ -20,7 +20,7 @@ export function About() {
     <Container id="about">
       <div className="about-image">
         <ScrollAnimation animateIn="fadeInRight" delay={0.21 * 1000}>
-          <img src="/Images/cather.png" alt="Catherine Regato" />
+          <img src="/Images/cather.png" alt="Catherine Ambrad" />
         </ScrollAnimation>
       </div>
       <div className="about-text">
@@ -45,25 +45,62 @@ export function About() {
         <ScrollAnimation animateIn="fadeInLeft" delay={400}>
           <div className="education">
             <h3>Education:</h3>
-            <h4>Computer Science</h4>
-            <p>University of Luzon | 06/2013 - 05/2017</p>
-            <p>Dagupan City, Pangasinan</p>
+            <h4>Computer Science &amp; Data Science</h4>
+            <p>De La Salle University (DLSU) | 2010 - 2014</p>
+            <p>Manila, Metro Manila</p>
+            <p>Associate's degree in Computer Science &amp; Data Science</p>
+            <br />
+            <h4>Computer Science &amp; Mathematics</h4>
+            <p>University of the Philippines Diliman | 2005 - 2009</p>
+            <p>Quezon City, Metro Manila</p>
+            <p>Bachelor of Science in Computer Science &amp; Mathematics</p>
           </div>
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInLeft" delay={550}>
           <div className="experience">
             <h3>Experience:</h3>
-            <h4>Backend Developer</h4>
-            <p>Merche | May 2020 - July 2024</p>
+            <h4>AI Marketing Automation Consultant</h4>
+            <p>SKIDD PH | 05/2020 - 06/2026</p>
             <p>Angeles, Philippines</p>
+            <ul>
+              <li>Build automated workflows inside Go-High-Level and other CRM platforms</li>
+              <li>Implement AI chatbots for website lead capture and qualification</li>
+              <li>Deploy AI voice systems for appointment booking and customer engagement</li>
+              <li>Optimize conversion rates through A/B testing and behavioral triggers</li>
+              <li>Manage paid traffic sources and integrate them into automated pipelines</li>
+              <li>Draft and distribute press releases to increase digital visibility</li>
+              <li>Talking Websites + Web Funnel designs</li>
+            </ul>
             <br />
-            <h4>Senior Full Stack Developer</h4>
-            <p>KIWIS & BROWNIES | October 2019 - April 2020</p>
-            <p>Cebu, Philippines</p>
+            <h4>Senior Software Developer</h4>
+            <p>Thinking Machines Data Science | 10/2019 - 04/2020</p>
+            <p>Taguig, Metro Manila</p>
+            <ul>
+              <li>Designed Python applications for data processing and workflow automation.</li>
+              <li>Built reusable mathematical libraries and reporting tools.</li>
+              <li>Improved application performance through code optimization.</li>
+              <li>Collaborated with engineering teams on scalable software solutions.</li>
+            </ul>
             <br />
-            <h4>Front End Developer</h4>
-            <p>Technology Elite | Mar 2018 - Aug 2019</p>
-            <p>Pampanga, Philippines</p>
+            <h4>Software Engineer</h4>
+            <p>Aboitiz Data Innovation | 03/2018 - 08/2019</p>
+            <p>Metro Manila</p>
+            <ul>
+              <li>Developed internal Python utilities for analytics and validation.</li>
+              <li>Created SQL queries and automated operational reports.</li>
+              <li>Maintained Linux-based production applications.</li>
+              <li>Performed testing and code reviews.</li>
+            </ul>
+            <br />
+            <h4>Python Developer</h4>
+            <p>Stratpoint Technologies | 03/2017 - 11/2017</p>
+            <p>Mandaluyong, Metro Manila</p>
+            <ul>
+              <li>Implemented data transformation pipelines using Python.</li>
+              <li>Developed visualization dashboards for business users.</li>
+              <li>Integrated APIs and automated recurring processes.</li>
+              <li>Prepared technical documentation.</li>
+            </ul>
           </div>
         </ScrollAnimation>
 

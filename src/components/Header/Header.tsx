@@ -16,7 +16,7 @@ export function Header() {
       <Router>
         <HashLink smooth to="#home" className="logo">
           <span>{"<Catherine "}</span>
-          <span>{" Regato/>"}</span>
+          <span>{" Ambrad/>"}</span>
         </HashLink>
         <input
           onChange={toggleTheme}

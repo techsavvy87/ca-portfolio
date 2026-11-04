@@ -1,8 +1,8 @@
-# Catherine Regato Portfolio
+# Catherine Ambrad Portfolio
 
 <img src ="https://github.com/CodeVinayak/CodeVinayak/blob/5920a79f4c5977332a67caf91125241cf0fc46b5/www.vinayaksingh.in.png" />
 
-Personal portfolio website for Catherine Regato, Full Stack AI Engineer.
+Personal portfolio website for Catherine Ambrad, Full Stack AI Engineer.
 
 The site highlights my experience, projects, technical skills, resume, and contact details. It is built with React, TypeScript, Vite, and styled-components.
 
